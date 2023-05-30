@@ -1,13 +1,21 @@
 import React from 'react';
+
 import Post from './Post';
+import Header from './Header';
 
 // const tituloUm = 'Título UM';
 
 function App() {
   return (
     <>
-      <h1>JStack's Blog</h1>
-      <h2>Posts da semana</h2>
+      <Header title="JStack's Blog">
+        <Post 
+          post={{
+            title: 'Passado via children',
+            subtitle: 'Subtítulo children',
+          }}
+        />
+      </ Header>
 
       <hr/>
 
