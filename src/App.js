@@ -8,24 +8,28 @@ import Header from './Header';
 function App() {
   return (
     <>
-      <Header title="JStack's Blog">
-        <Post 
-          post={{
-            title: 'Passado via children',
-            subtitle: 'Subtítulo children',
-          }}
-        />
+      <Header>
+        <h2>Posts da semana</h2>
       </ Header>
 
       <hr/>
 
       <Post 
+        likes={20}
         post={{
           title: 'Título UM',
           subtitle: 'Subtítulo da notícia 01',
         }}
       />
       <Post 
+        likes={10}
+        post={{
+          title: 'Título DOIS',
+          subtitle: 'Subtítulo da notícia 02',
+        }}
+      />
+      <Post 
+        likes={50}
         post={{
           title: 'Título DOIS',
           subtitle: 'Subtítulo da notícia 02',
