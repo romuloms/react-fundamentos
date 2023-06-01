@@ -9,19 +9,22 @@ function App() {
       id: Math.random(),
       title: 'Titulo#01',
       subtitle: 'Subtitulo#01',
-      likes: 10
+      likes: 10,
+      read: false,
     },
     { 
       id: Math.random(),
       title: 'Titulo#02',
       subtitle: 'Subtitulo#02',
-      likes: 20
+      likes: 20,
+      read: true,
     },
     { 
       id: Math.random(),
       title: 'Titulo#03',
       subtitle: 'Subtitulo#03',
-      likes: 100
+      likes: 100,
+      read: false,
     },
   ]);
 
@@ -34,7 +37,7 @@ function App() {
       {
         id: Math.random(),
         title: `Título#0${prevState.length + 1}`,
-        subtitle: `Sub#0${prevState.length + 1}`,
+        subtitle: `Subtítulo#0${prevState.length + 1}`,
         likes: 20
       },
     ]);
@@ -60,13 +63,8 @@ function App() {
       {posts.map(post => (
         <Post 
           key={post.id}
-          likes={post.likes}
           onRemove={handleRemovePost}
-          post={{
-            id: post.id,
-            title: post.title,
-            subtitle: post.subtitle
-          }}
+          post={post}
         />
       ))}
 
