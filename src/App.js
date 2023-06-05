@@ -14,6 +14,7 @@ function App() {
       subtitle: 'Subtitulo#01',
       likes: 10,
       read: false,
+      removed: true,
     },
     { 
       id: Math.random(),
@@ -21,6 +22,7 @@ function App() {
       subtitle: 'Subtitulo#02',
       likes: 20,
       read: true,
+      removed: false,
     },
     { 
       id: Math.random(),
@@ -28,6 +30,7 @@ function App() {
       subtitle: 'Subtitulo#03',
       likes: 100,
       read: false,
+      removed: false,
     },
   ]);
 
@@ -47,8 +50,10 @@ function App() {
   }
 
   function handleRemovePost(postId) {
-    setPosts((prevState) => (
-      prevState.filter(post => post.id !== postId)
+    setPosts((prevState) => prevState.map(
+      post => post.id === postId
+        ? { ...post, removed: true } // retorna um novo objeto mantendo as propriedades anteriores, só mudando o removed para true
+        : post
     ));
   }
 
