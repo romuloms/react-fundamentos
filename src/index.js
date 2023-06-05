@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 
-import './index.css';
+import './index.scss';
 
 // Functional Component -> function
 // Class Component -> class

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from './App.css';
+import styles from './App.scss';
 
 import Post from './Post';
 import Header from './Header';
