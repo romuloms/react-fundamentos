@@ -1,1 +1,1 @@
-# 📋 Study of React fundamentals
+# 📋 Study of React fundaments
