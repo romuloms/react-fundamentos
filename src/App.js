@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useLayoutEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import GlobalStyle from './styles/global';
@@ -18,9 +18,17 @@ function App() {
     setTheme(prevState => prevState === 'dark' ? 'light' : 'dark');
   }
 
-  useEffect(() => {
-    localStorage.setItem('theme', JSON.stringify(theme));
-  }, [theme]);
+  // useEffect(() => {
+  //   localStorage.setItem('theme', JSON.stringify(theme));
+  // }, [theme]);
+
+  useLayoutEffect(() => {
+    for (let i = 0; i < 1500; i++) {
+      console.debug(i);
+    }
+
+    // executado de forma sincrona, trava a aplicacao
+  });
 
   return (
     <ThemeProvider theme={currentTheme}>
