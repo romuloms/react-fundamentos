@@ -19,13 +19,17 @@ class App extends React.Component {
   render() {
     const { theme } = this.state
 
-    function handleToggleTheme() {}
+    console.log(this.state);
 
     return (
       <ThemeProvider theme={themes[theme] || themes.dark}>
         <GlobalStyle />
         <Layout 
-          onToggleTheme={handleToggleTheme}
+          onToggleTheme={() => {
+            // o use state com class components pega o objeto this inteiro, por isso precisa usar
+            // prevState.theme
+            this.setState(prevState => ({ theme: prevState.theme === 'dark' ? 'light' : 'dark' }));
+          }}
           selectedTheme={theme}  
         />
       </ThemeProvider>
